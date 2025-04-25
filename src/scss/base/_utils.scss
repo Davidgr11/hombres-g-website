@@ -1,0 +1,47 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Animations
+.animate__animated {
+    visibility: visible !important;
+}
+.animate-on-scroll {
+    opacity: 0;
+    visibility: hidden;
+}
+.animate__flash {
+    animation: 4s ease-in 0.4s 1;
+}
+.animate__jackInTheBox {
+    animation: 0.5s ease-in 0.2s 1;
+}
+.animate__fadeInLeft {
+    animation: 0.5s ease-in 0.2s 1;
+}
+.animate__fadeInUp {
+    animation: 1s ease-in 0.4s 1;
+}
+.animate__fadeInRight {
+    animation: 0.5s ease-in 0.1s 1;
+}
+.animate__pulse {
+    animation: 1s ease-in 0.1s infinite;
+}
+/*
+slideInUp slideInLeft slideInDown
+zoomIn zoomInUp
+jackInTheBox
+rollIn
+rotateIn rotateDownLeft
+flipInX flipInY
+fadeInUp fadeIn fadeInLeft fadeInTopLeft
+bounceIn bounceInLeft bounce
+backInLeft
+pulse heartBeat
+swing rubberBand tada
+*/
+
+// Buttons
+.btnPrimary {
+    @include m.btn(v.$colorSecondary, v.$colorLight, v.$colorTertiary, v.$colorLight);
+}

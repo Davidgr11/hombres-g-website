@@ -1,0 +1,26 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.article {
+    display:grid;
+    grid-template-columns: 1fr;
+    background-color: v.$colorTertiary;
+    align-items: center;
+    justify-content: center;
+
+    @include m.tablet{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__quote{
+        padding: v.$spaceSmall 0;
+        line-height: 2;
+        @include m.tablet{
+            padding: v.$spaceSmall;
+        };
+    }
+    &__img{
+        height: 100%;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,18 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.footer {
+    color: v.$colorLight;
+    text-align: center;
+    background-color: v.$colorDark;
+    padding: v.$spaceTiny 0;
+    
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: v.$spaceTiny;
+    }
+    &__author{
+        font-weight: 800;
+    }
+}

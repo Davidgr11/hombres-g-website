@@ -1,0 +1,103 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.bar {
+    background-color: v.$colorPrimary;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 6rem;
+    }
+    &__logo {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    // Mobile menu
+    &__burger {
+        display: block;
+
+        &:hover {
+            @include m.scale;
+        }
+
+        @include m.tablet {
+            display: none;
+        }
+
+        .bar__icon--close{
+            display: none;
+        }
+        &.active {
+            .bar__icon--close {
+                display: block;
+            }
+            .bar__icon--burger {
+                display: none;
+            }
+        }
+    }
+    &__menu {
+        display: none;
+        flex-direction: column;
+        gap: v.$spaceTiny;
+        background-color: v.$colorTertiary;
+        padding: v.$spaceSmall;
+
+        &.active {
+            display: flex;
+        }
+
+        a {
+            color: v.$colorLight;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            padding: v.$spaceTiny;
+            font-weight: v.$fontWeightBold;
+
+            &:hover {
+                color: v.$colorPrimary;
+                @include m.scale;
+            }
+        }
+
+        @include m.tablet {
+            display: none;
+        }
+    }
+
+    // Desktop/tablet menu
+    &__nav {
+        display: none;
+
+        @include m.tablet {
+            display: flex;
+            gap: v.$spaceRegular;
+
+            a {
+                color: v.$colorDark;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: v.$fontWeightBold;
+    
+                &:hover {
+                    color: v.$colorTertiary;
+                    @include m.scale;
+                }
+            }
+        }
+    }
+    &__link--active {
+        color: v.$colorPrimary !important;
+        @include m.tablet{
+            color: v.$colorTertiary !important;
+        }
+    }
+}

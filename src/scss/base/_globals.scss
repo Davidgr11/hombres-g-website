@@ -1,0 +1,106 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Page Structure
+html {
+    font-size: 62.5%; // 1rem = 10px
+    box-sizing: border-box; // Set the box-sizing to border-box for all elements
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+// Text Styles
+body {
+    font-family: v.$fontFamilyPrimary;
+    font-weight: v.$fontWeightRegular;
+    font-style: v.$fontStyle;
+    font-size: 1.6rem; // default font size
+    line-height: 1.5;
+    color: v.$colorLight;
+    background-color: v.$colorBgPrimary;
+    text-align: justify;
+    @include m.tablet{
+        font-size: 1.8rem;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: v.$fontWeightBold;
+    //line-height: 4.5rem;
+    text-align: center;
+    margin: 0;
+
+    @include m.tablet{
+        text-align: justify;
+    }
+}
+
+h1 {
+    font-size: 5rem;
+    @include m.tablet{
+        font-size: 7rem;
+    }
+}
+h2 {
+    font-size: 3.5rem;
+    @include m.tablet{
+        font-size: 5.5rem;
+    }
+}
+h3 {
+    font-size: 2.5rem;
+    @include m.tablet{
+        font-size: 4.5rem;
+    }
+}
+h4 {
+    font-size: 2rem;
+    @include m.tablet{
+        font-size: 3.5rem;
+    }
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+
+// Sections Container
+.block {
+    width:85%;
+    max-width: 120rem;
+    margin: v.$spaceRegular auto;
+}
+.blockWidth {
+    width: 85%;
+    max-width: 120rem;
+    margin:0 auto;
+}
+.blockHeight {
+    margin: v.$spaceRegular auto;
+}
+
+// Elements Initialization
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img, iframe, video {
+    max-width: 100%;
+    display: block;
+    //height: auto;
+    //margin: 0 auto;
+}
+
+table {
+	border-collapse:collapse;
+}

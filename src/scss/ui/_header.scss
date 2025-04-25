@@ -1,0 +1,60 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.header {
+    // image
+    background-image: url('../img/hero.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    // position
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    // dark transparence
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4); // semi-transparent black overlay
+    }
+
+    &__social{
+        z-index: 2;
+        display:flex;
+        position: absolute;
+        top:v.$spaceSmall;
+        gap:v.$spaceSmall;
+
+        a {
+            cursor: pointer;
+            &:hover{@include m.scale;}
+
+        }
+        @include m.tablet{
+            right: v.$spaceRegular;
+        };
+    }
+
+    &__title{
+        z-index: 2;
+        color: v.$colorLight;
+        text-transform: uppercase;
+        font-size: 5rem;
+        text-shadow: 1px 1px 2px black, 0 0 25px v.$colorPrimary, 0 0 5px v.$colorPrimary;
+
+        @include m.tablet{
+            font-size: 8rem;
+        }
+    }
+
+}

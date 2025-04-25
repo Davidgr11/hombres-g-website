@@ -1,0 +1,42 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.conciertos{
+    overflow: hidden;
+    &__title{
+        padding-bottom: v.$spaceSmall;
+    }
+
+    &__lista {
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: v.$spaceSmall;
+        @include m.tablet{
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: v.$spaceRegular;
+        }
+    }
+
+    &__card {
+        border: 1px solid v.$colorPrimary;
+        border-radius: v.$spaceSmall;
+        padding: v.$spaceSmall;
+        display:flex;
+        flex-direction: column;
+        gap: v.$spaceSmall;
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+        align-items: center;
+        gap:v.$spaceSmall;
+
+        h3{
+            color: v.$colorPrimary;
+        }
+
+    }
+}

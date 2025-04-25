@@ -1,0 +1,88 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.discografia {
+    overflow: hidden;
+    &__content {
+        display: grid;
+        grid-template-rows: 1fr;
+        gap: v.$spaceSmall;
+
+        @include m.tablet{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: unset;
+            gap: v.$spaceRegular;
+            align-items: center;
+        }
+    }
+
+    &__img{
+        @include m.rotate();
+        width: 80%;
+        max-width: 30rem;
+        margin: 0 auto;
+    }
+}
+
+.discos{
+    overflow: hidden;
+    &__title{
+        margin-bottom: v.$spaceSmall;
+    }
+
+    &__lista {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: v.$spaceSmall;
+
+        @include m.tablet{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: unset;
+            gap: v.$spaceRegular;
+        }
+    }
+}
+
+.disco{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: v.$spaceSmall;
+    border-radius: v.$spaceSmall;
+    border: 1px solid v.$colorSecondary;
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: v.$spaceTiny;
+    }
+    &__title{
+        span {
+            color: v.$colorPrimary;
+            display: block;
+        }
+        
+
+    }
+}
+
+.music {
+    margin-bottom: v.$spaceSmall;
+}
+
+.note {
+    background-color: v.$colorTertiary;
+    padding: v.$spaceRegular 0;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: v.$spaceSmall;
+
+        span {
+            font-weight: v.$fontWeightBold;
+            color: v.$colorPrimary;
+        }
+    }
+}

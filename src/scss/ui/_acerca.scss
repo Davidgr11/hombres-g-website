@@ -1,0 +1,116 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.acerca {
+    &__title {
+        margin-bottom: v.$spaceSmall;
+    }
+}
+
+.frases {
+    &__content{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        gap: v.$spaceRegular;
+        font-style: italic;
+    }
+}
+
+.datos{
+
+    &__title{
+        margin-bottom: v.$spaceSmall;
+    }
+    &__lista{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: v.$spaceSmall;
+
+        @include m.tablet{
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+    }
+    &__card{
+        padding: v.$spaceSmall;
+        border-radius: v.$spaceTiny;
+        display: flex;
+        flex-direction: column;
+        gap: v.$spaceTiny;
+    }
+
+    &__img{
+        margin: 0 auto;
+    }
+    &__info{
+        text-align: center;
+        span {
+            font-weight: v.$fontWeightBold;
+        }
+    }
+}
+
+.musicos {
+    &__title {
+        margin-bottom: v.$spaceSmall;
+    }
+
+    &__lista {
+        &:nth-child(1) {
+            background-color: v.$colorPrimary;
+            
+        }
+    }
+
+    &__item {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        .musicos__rol {
+            color: v.$colorTertiary;
+        }
+
+        &:nth-child(even) {
+            background-color: v.$colorPrimary;
+            color: v.$colorDark;
+        }
+        &:nth-child(odd) {
+            background-color: v.$colorSecondary;
+        }
+
+        @include m.tablet{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: unset;
+
+            &:nth-child(even) {
+                .musicos__info {
+                    order:-1;
+                }
+                .musicos_img {
+                    order:0;
+                }
+    
+            }
+        }
+        
+    }
+    &__img{
+        height: 100%;
+        object-fit: cover;
+    }
+    &__info {
+        display:flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: v.$spaceSmall;
+        padding: v.$spaceSmall 0;
+        
+        @include m.tablet{
+            padding: v.$spaceSmall;
+        }
+    }
+
+}

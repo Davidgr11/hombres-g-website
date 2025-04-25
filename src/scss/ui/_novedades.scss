@@ -1,0 +1,37 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.novedades{
+    &__title{
+        padding-bottom: v.$spaceSmall;
+    }
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+        gap: v.$spaceSmall;
+
+        @include m.tablet{
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr 2fr;
+            row-gap: v.$spaceRegular;
+        }
+    }
+    &__subtitle {
+        color: v.$colorSecondary;
+    }
+    &__img{
+        width:60%;
+        padding:v.$spaceTiny;
+        background-color: v.$colorSecondary;
+        border-radius: v.$spaceTiny;
+    }
+    &__spotify{
+        height: 45rem;
+        @include m.tablet{
+            grid-column: 1/3;
+        }
+    }
+
+}
