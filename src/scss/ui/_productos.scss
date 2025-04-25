@@ -113,7 +113,13 @@
     }
     &__img{
         height: 100%;
+        width: 100%;
+        max-height: 30rem;
         object-fit: cover;
+
+        @include m.tablet{
+            max-height: none;
+        }
     }
 
     &__info{
@@ -126,7 +132,7 @@
         color: v.$colorDark;
 
         @include m.tablet{
-            margin: v.$spaceRegular 0;
+            margin: v.$spaceSmall 0;
         }
     }
 }
