@@ -805,7 +805,6 @@ table {
 .musicos__item {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
   align-items: center;
 }
 .musicos__item .musicos__rol {
@@ -831,10 +830,18 @@ table {
   }
 }
 .musicos__img {
-  height: 100%;
   object-fit: cover;
+  max-height: 30rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .musicos__img {
+    height: 100%;
+    max-height: 50rem;
+  }
 }
 .musicos__info {
+  max-height: 40rem;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -844,6 +851,7 @@ table {
 @media (min-width: 768px) {
   .musicos__info {
     padding: 2.5rem;
+    max-height: 50rem;
   }
 }
 
@@ -953,7 +961,7 @@ table {
   margin: 2.5rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 15rem;
 }
 @media (min-width: 768px) {
   .lentes__galeria {
@@ -963,6 +971,8 @@ table {
 .lentes__img {
   object-fit: cover;
   height: 100%;
+  width: 100%;
+  max-height: 30rem;
 }
 .lentes__img:nth-child(1) {
   grid-column: 1/2;
